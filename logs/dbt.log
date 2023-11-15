@@ -1,0 +1,31 @@
+[0m15:38:22.074042 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f0ed90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f38790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f38d50>]}
+
+
+============================== 15:38:22.076738 | 3143f28e-7edc-478f-9661-fbb9c91384bd ==============================
+[0m15:38:22.076738 [info ] [MainThread]: Running with dbt=1.7.1
+[0m15:38:22.077046 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/varanik/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt init', 'send_anonymous_usage_stats': 'True'}
+[0m15:38:22.077334 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/Users/varanik/.dbt')}
+[0m15:38:22.077489 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m15:38:52.772053 [debug] [MainThread]: Starter project path: /Users/varanik/anaconda3/envs/dbt/lib/python3.11/site-packages/dbt/include/starter_project
+[0m15:38:52.784686 [info ] [MainThread]: 
+Your new dbt project "qt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:38:52.785349 [info ] [MainThread]: Setting up your profile.
+[0m15:40:14.746354 [info ] [MainThread]: Profile qt written to /Users/varanik/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m15:40:15.257855 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 113.198654, "process_user_time": 0.822998, "process_kernel_time": 0.174676, "process_mem_max_rss": "106168320", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m15:40:15.259452 [debug] [MainThread]: Command `dbt init` succeeded at 15:40:15.259116 after 113.20 seconds
+[0m15:40:15.260475 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f4acd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f0bc10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1049fa6d0>]}
+[0m15:40:15.261598 [debug] [MainThread]: Flushing usage events
