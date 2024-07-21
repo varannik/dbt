@@ -1,0 +1,26 @@
+version: 1
+
+sources:
+  - name: utils
+    database: QBM
+    schema: dw_utils
+    tables:
+      - name: calendar
+
+
+  - name: raw
+    database: QBM
+    schema: dw_raw
+    tables:
+      - name: daily_bonbast
+
+  - name: raw
+    database: QBM
+    schema: dw_raw
+    tables:
+      - name: realtime_bonbast
+
+
+
+
+
