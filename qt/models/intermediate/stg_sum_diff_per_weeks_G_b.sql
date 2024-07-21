@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
 
-{% set table = 'stg_diff_daily_with_avg_weekly_b' %}
+{% set table = 'stg_diff_daily_with_avg_weekly_G_b' %}
 {% set date_column = 'date' %}
 {% set weeks_range = range(1, 50) %}
 
@@ -11,7 +11,7 @@ with weekly_sums as (
 
         SELECT 
             asset
-            ,week_day_pr
+            ,"G_WeekDay_N"
             ,{{ i }} as week_number
             ,SUM(diff_buy) as sum_diff_buy 
             ,SUM(diff_sell) as sum_diff_sell
@@ -21,7 +21,7 @@ with weekly_sums as (
             {{ date_column }} >= CURRENT_DATE - INTERVAL '{{ i }} week'
 
         GROUP BY 
-            asset, week_day_pr
+            asset, "G_WeekDay_N"
 
         {% if not loop.last %}
         UNION ALL

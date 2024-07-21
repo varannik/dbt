@@ -14,6 +14,11 @@ sources:
     tables:
       - name: daily_bonbast
 
+  - name: raw
+    database: QBM
+    schema: dw_raw
+    tables:
+      - name: realtime_bonbast
 
 
 

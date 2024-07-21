@@ -38,3 +38,8 @@ models:
       +materialized: view
       +tags: ["intermediate"]
       +schema: intermediate
+
+    analysis:
+      +materialized: view
+      +tags: ["analysis"]
+      +schema: analysis
