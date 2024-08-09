@@ -1,0 +1,32 @@
+COUNTRY_NAME,XE,ALPHA_2,ALPHA_3,NUMERIC
+Afghanistan,Afghan Afghani,AF,AFG,4
+Amernia,10Armenian Dram,AM,ARM,51
+Australia,Australian Dollar,AU,AUS,16
+Azerbaijan,Azerbaijani Manat,AZ,AZE,31
+Bahrain,Bahraini Dinar,BH,BHR,48
+Canada,Canadian Dollar,CA,CAN,124
+China,Chinese Yuan,CN,CHN,156
+Coin,Azadi,,,
+Coin,Emami,,,
+Denmark,Danish Krone,DK,DNK,208
+European Union,Euro,EU,,
+Gold,Gerami,,,
+Hong Kong,Hong Kong Dollar,HK,HKG,344
+India,Indian Rupee,IN,IND,356
+Iraq,100Iraqi Dinar,IQ,IRQ,368
+Japan,10Japanese Yen,JP,JPN,392
+Kuwait,Kuwaiti Dinar,KW,KWT,414
+Malaysia,Ringgit,MY,MYS,458
+Norway,Norwegian Krone,NO,NOR,578
+Oman,Omani Rial,OM,OMN,512
+Qatar,Qatari Riyal,QA,QAT,634
+Russian Federation (the),Russian Ruble,RU,RUS,643
+Saudi Arabia,KSA Riyal,SA,SAU,682
+Singapore,Singapore Dollar,SG,SGP,702
+Sweden,Swedish Krona,SE,SWE,752
+Switzerland,Swiss Franc,CH,CHE,756
+Thailand,Thai Baht,TH,THA,764
+Turkey,Turkish Lira,TR,TUR,792
+United Arab Emirates,UAE Dirham,AE,ARE,784
+United Kingdom,British Pound,GB-UKM,,
+United States of America,US Dollar,US,USA,840

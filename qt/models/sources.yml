@@ -6,7 +6,12 @@ sources:
     schema: dw_utils
     tables:
       - name: calendar
-
+  
+  - name: utils
+    database: QBM
+    schema: dw_utils
+    tables:
+      - name: countries
 
   - name: raw
     database: QBM

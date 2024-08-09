@@ -1,4 +1,3 @@
-
 seeds:
 
   - name: calendar
@@ -33,12 +32,21 @@ seeds:
       - name: H_Year_N
       - name: H_Month_N
       - name: H_Day_N
-      
 
+  - name: countries
+    description: Combination Country name, code, and their currency
+    docs:
+      show: true
+    config:
+      enabled: true
+      schema: utils
 
-
-
-
+    columns:
+      - name: COUNTRY_NAME
+      - name: XE
+      - name: ALPHA_2
+      - name: ALPHA_3
+      - name: NUMERIC
 
 
 
