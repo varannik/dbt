@@ -18,7 +18,7 @@ drb_y as (
 ),
 
 drb_weeklyaverage as (
-    select   asset , "G_Year_N", "G_Week_N",  ROUND(avg(buy), 2)  as AVG_BUY , ROUND(avg(sell), 2) as AVG_SELL  from drb_y
+    select   asset , "G_Year_N", "G_Week_N",  ROUND(avg(buy::numeric::integer), 2)  as AVG_BUY , ROUND(avg(sell::numeric::integer), 2) as AVG_SELL  from drb_y
     group by asset , "G_Year_N", "G_Week_N"
     order by asset , "G_Year_N", "G_Week_N"
     )

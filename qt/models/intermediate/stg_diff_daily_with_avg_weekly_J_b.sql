@@ -22,6 +22,8 @@ drb_diff_avg as (
             ,avg_sell
             ,(buy- avg_buy) as diff_buy
             ,(sell - avg_sell) as diff_sell
+            ,(buy- avg_buy)/avg_buy as diff_per_buy
+            ,(sell - avg_sell)/avg_sell as diff_per_sell
 
             from drb_join_weekly_avg
 )

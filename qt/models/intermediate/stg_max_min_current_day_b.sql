@@ -9,11 +9,11 @@ xe_realtime as ( select * from {{source('raw', 'realtime_bonbast')}}),
 
 xe_filtered as (
     SELECT
-        date,
+        DATE(date) as date,
         asset,
         sell,
         buy,
-        MAX(date) OVER (PARTITION BY asset) AS last_date
+        MAX(DATE(date)) OVER (PARTITION BY asset) AS last_date
     FROM xe_realtime
 ),
 
