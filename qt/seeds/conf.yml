@@ -1,52 +1,52 @@
-seeds:
+# seeds:
 
-  - name: calendar
-    description: Combination of GE, PR, AR calendar
-    docs:
-      show: true
-    config:
-      enabled: true
-      schema: utils
+#   - name: calendar
+#     description: Combination of GE, PR, AR calendar
+#     docs:
+#       show: true
+#     config:
+#       enabled: true
+#       schema: utils
 
-    columns:
-      - name: Miladi
-      - name: M_MidYear_T
-      - name: M_Month_T
-      - name: M_Month_N
-      - name: M_WeekDay_T
-      - name: M_Week_N
-      - name: Jalali
-      - name: Jalali_1
-      - name: Jalali_2
-      - name: Jalali_3
-      - name: J_Year_N
-      - name: J_Nime_T
-      - name: J_Quarter_N
-      - name: J_Month_N
-      - name: J_WeekDay_N
-      - name: J_Week_N
-      - name: J_Day_N
-      - name: J_YMD_N
-      - name: J_Holiday
-      - name: Hijri
-      - name: H_Year_N
-      - name: H_Month_N
-      - name: H_Day_N
+#     columns:
+#       - name: Miladi
+#       - name: M_MidYear_T
+#       - name: M_Month_T
+#       - name: M_Month_N
+#       - name: M_WeekDay_T
+#       - name: M_Week_N
+#       - name: Jalali
+#       - name: Jalali_1
+#       - name: Jalali_2
+#       - name: Jalali_3
+#       - name: J_Year_N
+#       - name: J_Nime_T
+#       - name: J_Quarter_N
+#       - name: J_Month_N
+#       - name: J_WeekDay_N
+#       - name: J_Week_N
+#       - name: J_Day_N
+#       - name: J_YMD_N
+#       - name: J_Holiday
+#       - name: Hijri
+#       - name: H_Year_N
+#       - name: H_Month_N
+#       - name: H_Day_N
 
-  - name: countries
-    description: Combination Country name, code, and their currency
-    docs:
-      show: true
-    config:
-      enabled: true
-      schema: utils
+#   - name: countries
+#     description: Combination Country name, code, and their currency
+#     docs:
+#       show: true
+#     config:
+#       enabled: true
+#       schema: utils
 
-    columns:
-      - name: COUNTRY_NAME
-      - name: XE
-      - name: ALPHA_2
-      - name: ALPHA_3
-      - name: NUMERIC
+#     columns:
+#       - name: COUNTRY_NAME
+#       - name: XE
+#       - name: ALPHA_2
+#       - name: ALPHA_3
+#       - name: NUMERIC
 
 
 
