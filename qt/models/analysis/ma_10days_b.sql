@@ -12,7 +12,7 @@ ma_columns as (
   {% set selected_columns = [] %}
 
   {% for column in columns %}
-    {% if 'moving_avg' in column.name %}
+    {% if 'moa' in column.name %}
       {% do selected_columns.append(column.name) %}
     {% endif %}
   {% endfor %}

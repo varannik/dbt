@@ -36,21 +36,21 @@ base_features as (
         PARTITION BY asset 
         ORDER BY date 
         ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
-    ) AS moving_avg_short_3
+    ) AS MOA3
   
   -- Moving avarge past 5 days 
   ,AVG(sell) OVER (
         PARTITION BY asset 
         ORDER BY date 
         ROWS BETWEEN 5 PRECEDING AND 1 PRECEDING
-    ) AS moving_avg_short_5
+    ) AS MOA5
 
   -- Moving avarge past 10 days 
   ,AVG(sell) OVER (
         PARTITION BY asset 
         ORDER BY date 
         ROWS BETWEEN 10 PRECEDING AND 1 PRECEDING
-    ) AS moving_avg_short_10
+    ) AS MOA10
 
   -- Medium-term moving averages (50, 100 periods)
   -- Moving avarge past 50 days 
@@ -58,14 +58,14 @@ base_features as (
         PARTITION BY asset 
         ORDER BY date 
         ROWS BETWEEN 50 PRECEDING AND 1 PRECEDING
-    ) AS moving_avg_mid_50
+    ) AS MOA50
 
   -- Moving avarge past 100 days 
   ,AVG(sell) OVER (
         PARTITION BY asset 
         ORDER BY date 
         ROWS BETWEEN 100 PRECEDING AND 1 PRECEDING
-    ) AS moving_avg_mid_100
+    ) AS MOA100
 
   --Long-term moving averages (200, 300 periods) 
   -- Moving avarge past 200 days 
@@ -73,40 +73,40 @@ base_features as (
         PARTITION BY asset 
         ORDER BY date 
         ROWS BETWEEN 200 PRECEDING AND 1 PRECEDING
-    ) AS moving_avg_long_200
+    ) AS MOA200
 
   -- Moving avarge past 300 days 
   ,AVG(sell) OVER (
         PARTITION BY asset 
         ORDER BY date 
         ROWS BETWEEN 300 PRECEDING AND 1 PRECEDING
-    ) AS moving_avg_long_300
+    ) AS MOA300
 
     -- Create lag features for 1 day, 7 days, and 30 days
-  ,LAG(sell, 1) OVER (PARTITION BY asset ORDER BY date) AS lag_1_day
-  ,LAG(sell, 7) OVER (PARTITION BY asset ORDER BY date) AS lag_7_days
-  ,LAG(sell, 30) OVER (PARTITION BY asset ORDER BY date) AS lag_30_days
+  ,LAG(sell, 1) OVER (PARTITION BY asset ORDER BY date) AS Lg1
+  ,LAG(sell, 7) OVER (PARTITION BY asset ORDER BY date) AS Lg7
+  ,LAG(sell, 30) OVER (PARTITION BY asset ORDER BY date) AS Lg30
 
   -- Rolling 3-day standard deviation (volatility)
   ,STDDEV_SAMP(sell) OVER (
         PARTITION BY asset
         ORDER BY date
         ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
-    ) AS rolling_stddev_3_days
+    ) AS RollS3
     
   -- Rolling 5-day standard deviation (volatility)
   ,STDDEV_SAMP(sell) OVER (
         PARTITION BY asset
         ORDER BY date
         ROWS BETWEEN 5 PRECEDING AND 1 PRECEDING
-    ) AS rolling_stddev_5_days
+    ) AS RollS5
 
   -- Rolling 10-day standard deviation (volatility)
   ,STDDEV_SAMP(sell) OVER (
         PARTITION BY asset
         ORDER BY date
         ROWS BETWEEN 10 PRECEDING AND 1 PRECEDING
-    ) AS rolling_stddev_10_days
+    ) AS RollS10
   
   -- Calculate 1-day percentage change (Rate of Change)
   ,((LAG(sell, 1) OVER (PARTITION BY asset ORDER BY date) - LAG(sell, 2) OVER (PARTITION BY asset ORDER BY date)) / LAG(sell, 2) OVER (PARTITION BY asset ORDER BY date)) * 100 AS roc_1_day
@@ -161,11 +161,11 @@ Bollinger_Bands as (
 
 select 
     *
-    ,moving_avg_short_10 AS middle_band
+    ,RollS10 AS middle_band
     -- Calculate the Upper Band: Moving Average + 2 * Standard Deviation
-    ,moving_avg_short_10 + (2 * rolling_stddev_10_days) AS upper_band
+    ,RollS10 + (2 * RollS10) AS upper_band
     -- Calculate the Lower Band: Moving Average - 2 * Standard Deviation
-    ,moving_avg_short_10 - (2 * rolling_stddev_10_days) AS lower_band
+    ,RollS10 - (2 * RollS10) AS lower_band
 
     from RSI
 
