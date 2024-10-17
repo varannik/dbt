@@ -161,11 +161,30 @@ Bollinger_Bands as (
 
 select 
     *
-    ,RollS10 AS middle_band
+    -------------------------- 3 Days
+    ,MOA3 AS middle_band_MA3
     -- Calculate the Upper Band: Moving Average + 2 * Standard Deviation
-    ,RollS10 + (2 * RollS10) AS upper_band
+    ,MOA3 + (2 * RollS3) AS upper_band_MA3
     -- Calculate the Lower Band: Moving Average - 2 * Standard Deviation
-    ,RollS10 - (2 * RollS10) AS lower_band
+    ,MOA3 - (2 * RollS3) AS lower_band_MA3
+    ----------------------------------
+    
+    -------------------------- 5 Days
+    ,MOA5 AS middle_band_MA5
+    -- Calculate the Upper Band: Moving Average + 2 * Standard Deviation
+    ,MOA5 + (2 * RollS5) AS upper_band_MA5
+    -- Calculate the Lower Band: Moving Average - 2 * Standard Deviation
+    ,MOA5 - (2 * RollS5) AS lower_band_MA5
+    ----------------------------------
+    
+    -------------------------- 10 Days
+    ,MOA10 AS middle_band_MA10
+    -- Calculate the Upper Band: Moving Average + 2 * Standard Deviation
+    ,MOA10 + (2 * RollS10) AS upper_band_MA10
+    -- Calculate the Lower Band: Moving Average - 2 * Standard Deviation
+    ,MOA10 - (2 * RollS10) AS lower_band_MA10
+    ----------------------------------
+
 
     from RSI
 
