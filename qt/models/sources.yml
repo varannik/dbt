@@ -25,6 +25,11 @@ sources:
     tables:
       - name: realtime_bonbast
 
+  - name: raw
+    database: QBM
+    schema: dw_raw
+    tables:
+      - name: ai_predictions
 
 
 
