@@ -31,6 +31,20 @@ sources:
     tables:
       - name: ai_predictions
 
+  - name: raw
+    database: QBM
+    schema: dw_raw
+    tables:
+      - name: test_user_predicts
+
+  - name: raw
+    database: QBM
+    schema: dw_raw
+    tables:
+      - name: daily_user_predicts
+
+
+
 
 
 
