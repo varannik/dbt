@@ -22,6 +22,21 @@ most_recent_data as (
 
 select *
 from most_recent_data
+where asset NOT IN (
+'½ Azadi'
+,'¼ Azadi'
+,'Azadi'
+,'Emami'
+,'Gerami'
+,'Turkmenistani Manat'
+,'Georgian Lari'
+,'Kyrgystani Som'
+,'Tajikistani Somoni'
+,'South Korean won'
+,'New Zealand Dollar'
+,'Pakistani Rupee'
+,'Syrian Pound'
+ )
 
 
 
